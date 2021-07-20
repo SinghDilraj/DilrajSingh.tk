@@ -1,12 +1,25 @@
+/* :root {
+	--rotateBackground: 0;
+} */
+
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-    height: 100%;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-    overflow: hidden;
+	height: 100%;
+	background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+	overflow: hidden;
+}
+
+#shootingStar{
+	visibility:hidden;
+	width: 100px;
+	height: 100px;
+	background-image: url(../images/shooting_star.png);
+	background-size: cover;
+	position: absolute;
 }
 
 @keyframes star-background {
@@ -14,16 +27,20 @@ html {
 		left: 0;
 		top: 0;
 	}
-	to { 
+
+	to {
 		left: -10000px;
 		top: -2000px;
+		transform: translate(50%, 50%) rotate(90deg);
 	}
 }
 
 #foreground {
 	background: url(../images/foreground.png) repeat 35% 35%;
 	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 300;
-    animation: star-background 200s linear infinite;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	animation: star-background 200s linear infinite;
 }
